@@ -5,9 +5,11 @@
 }
 
 body {
+  position: relative;
   background-color: aliceblue;
   display: flex;
   color: black;
+  box-sizing: border-box;
 }
 body > table {
   width: 80%;
@@ -42,7 +44,8 @@ input[type="number"] {
 input[type="submit"] {
   width: 30%;
   background-color: #ddd;
-  color: #ddd;
+  color: #333;
+  font-weight: 400;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -50,6 +53,27 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+.flex:first-child {
+  position: absolute;
+  /* padding: ; */
+  /* width: 500px; */
+  top: 5rem;
+  justify-content: center;
+  align-items: center;
+  /* left: 10rem; */
+}
+/* .flex:last-child {
+  width: 800px;
+} */
+.form {
+  width: 100vw;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
 from div.from-action-buttons {
   text-align: right;
   color: black;
