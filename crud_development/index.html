@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <!-- html form CRUD Operations -->
+          <form onsubmit="onFormSubmit();" autocomplete="off">
+            <div>
+              <label for="">Emp code</label>
+              <input type="text" name="empCode" id="empCode" />
+            </div>
+            <div>
+              <label for="">Full Name</label>
+              <input type="text" name="fullName" id="fullName" />
+            </div>
+            <div>
+              <label for="">City</label>
+              <input type="text" name="city" id="city" />
+            </div>
+            <div class="form-action-buttons">
+              <input type="submit" value="submit" id="submit" />
+            </div>
+          </form>
+        </td>
+        <td>
+          <!-- table to list all records  -->
+          <table class="list" id="employeeList">
+            <thead>
+              <tr>
+                <th>EMP Code</th>
+                <th>Full Name</th>
+                <th>City</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>22211</th>
+                <th>22212</th>
+                <th>22213</th>
+                <th>22214</th>
+              </tr>
+              <tr>
+                <th>nilash chaudhary</th>
+                <th>mukesh chaudhary</th>
+                <th>mahesh chaudhary</th>
+                <th>naresh chaudhary</th>
+              </tr>
+              <tr>
+                <th>Anand</th>
+                <th>Anand</th>
+                <th>Anand</th>
+                <th>Anand</th>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <script src="./script.js"></script>
+  </body>
+</html>
