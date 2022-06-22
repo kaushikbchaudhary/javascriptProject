@@ -10,9 +10,13 @@
   <body>
     <table>
       <tr class="flex">
-        <td class="form">
+        <td>
           <!-- html form CRUD Operations -->
-          <form onsubmit="onFormSubmit();" autocomplete="off">
+          <form
+            onsubmit="event.preventDefault();onFormSubmit(); "
+            autocomplete="off"
+            class="center"
+          >
             <div>
               <label for="">Emp code</label>
               <input type="text" name="empCode" id="empCode" />
@@ -38,26 +42,10 @@
                 <th>EMP Code</th>
                 <th>Full Name</th>
                 <th>City</th>
-                <th></th>
+                <!-- <th></th> -->
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th>22211</th>
-                <th>nilash chaudhary</th>
-                <th>Anand</th>
-              </tr>
-              <tr>
-                <th>22212</th>
-                <th>mukesh chaudhary</th>
-                <th>Anand</th>
-              </tr>
-              <tr>
-                <th>22213</th>
-                <th>mahesh chaudhary</th>
-                <th>Anand</th>
-              </tr>
-            </tbody>
+            <tbody></tbody>
           </table>
         </td>
       </tr>
