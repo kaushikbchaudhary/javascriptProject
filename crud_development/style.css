@@ -7,12 +7,22 @@
 body {
   position: relative;
   background-color: aliceblue;
+  /* background-color: rgb(255, 255, 203); */
   display: flex;
   color: black;
   box-sizing: border-box;
 }
 body > table {
   width: 80%;
+}
+h1#title {
+  display: block;
+  flex-direction: row;
+  padding-left: 40%;
+  padding-right: 40%;
+  padding-top: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
 table {
@@ -29,12 +39,16 @@ th {
   width: 100vh;
 }
 
-tr:nth-child(even),
+tr:nth-child(even) {
+  background-color: aquamarine;
+}
 table.list thead > tr {
-  background-color: #dddddd;
+  /* background-color: #dddddd; */
+  background-color: aquamarine;
 }
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+input[type="email"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -55,7 +69,7 @@ input[type="submit"] {
 }
 .center {
   justify-content: center;
-  align-items: ce;
+  align-items: center;
 }
 
 .flex {
@@ -90,4 +104,8 @@ label.validation-error {
 }
 .hide {
   display: none;
+}
+
+#submit {
+  background-color: aquamarine;
 }

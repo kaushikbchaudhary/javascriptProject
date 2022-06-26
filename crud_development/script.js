@@ -1,17 +1,23 @@
 let selectedRow = null;
 
 function onFormSubmit() {
-  let formData = readFormData();
-  if (selectedRow == null) insertNewRecord(formData);
-  else updateRecord(formData);
-  resetForm();
+  if (validate()) {
+    let formData = readFormData();
+    if (selectedRow == null) {
+      insertNewRecord(formData);
+    } else {
+      updateRecord(formData);
+    }
+    resetForm();
+  }
 }
 
 function readFormData() {
   let formData = {};
-  formData["fullName"] = document.getElementById("fullName").value;
-  formData["empCode"] = document.getElementById("empCode").value;
-  formData["city"] = document.getElementById("city").value;
+  formData.empCode = document.getElementById("empCode").value;
+  formData.fullName = document.getElementById("fullName").value;
+  formData.email = document.getElementById("email").value;
+  formData.city = document.getElementById("city").value;
   console.log(formData);
   return formData;
 }
@@ -28,31 +34,42 @@ function insertNewRecord(data) {
   cell2.innerHTML = data.fullName;
 
   cell3 = newRow.insertCell(2);
-  cell3.innerHTML = data.city;
+  cell3.innerHTML = data.email;
 
   cell4 = newRow.insertCell(3);
-  cell4.innerHTML = `<a onClick="onEdit(this)">Update</a><a onClick="onDelete(this)">Delete</a>`;
+  cell4.innerHTML = data.city;
+
+  cell5 = newRow.insertCell(4);
+  cell5.innerHTML = `<a onClick="onEdit(this)">Update</a>
+  <a onClick="onDelete(this)">Delete</a>`;
+  console.log(this);
 }
 
 function resetForm() {
-  document.getElementById("fullName").value = "";
   document.getElementById("empCode").value = "";
+  document.getElementById("fullName").value = "";
+  document.getElementById("email").value = "";
   document.getElementById("city").value = "";
   selectedRow = null;
 }
 
 function onEdit(td) {
   selectedRow = td.parentElement.parentElement;
-  document;
-  document.getElementById("empCode").value = selectedRow.cells[0].innerHTML;
-  document.getElementById("fullName").value = selectedRow.cells[1].innerHTML;
-  document.getElementById("city").value = selectedRow.cells[2].innerHTML;
+  // document.getElementById("empCode").value = selectedRow.cells[0].innerHTML;
+  // document.getElementById("fullName").value = selectedRow.cells[1].innerHTML;
+  // document.getElementById("emalil").value = selectedRow.cells[2].innerHTML;
+  // document.getElementById("city").value = selectedRow.cells[3].innerHTML;
+  selectedRow.cells[0].innerHTML;
+  selectedRow.cells[1].innerHTML;
+  selectedRow.cells[2].innerHTML;
+  selectedRow.cells[3].innerHTML;
 }
 
 function updateRecord(formData) {
   selectedRow.cells[0].innerHTML = formData.empCode;
   selectedRow.cells[1].innerHTML = formData.fullName;
-  selectedRow.cells[2].innerHTML = formData.city;
+  selectedRow.cells[2].innerHTML = formData.email;
+  selectedRow.cells[3].innerHTML = formData.city;
 }
 
 function onDelete(td) {
@@ -62,3 +79,22 @@ function onDelete(td) {
     resetForm();
   }
 }
+
+function validate() {
+  isValid = true;
+  if (document.getElementById("empCode").value == "") {
+    isValid = false;
+    document.getElementById("empCodeValidationError").classList.remove("hide");
+  } else {
+    isValid = true;
+    if (
+      !document
+        .getElementById("empCodeValidationError")
+        .classList.contains("hide")
+    )
+      document.getElementById("empCodeValidationError").classList.add("hide");
+  }
+  return isValid;
+}
+
+function sort() {}
