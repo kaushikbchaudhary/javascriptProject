@@ -16,7 +16,7 @@ body > table {
   width: 80%;
 }
 h1#title {
-  display: block;
+  position: absolute;
   flex-direction: row;
   padding-left: 40%;
   padding-right: 40%;
