@@ -98,7 +98,8 @@ a {
   margin-right: 4px;
 }
 
-label.validation-error {
+label.validation-error,
+label.duplition-error {
   color: red;
   margin-left: 5px;
 }
